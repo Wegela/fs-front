@@ -1,7 +1,13 @@
-
 <router-outlet></router-outlet>
 
-<app-counter [valeurCompteurFils]="valeurCompteurPere" (decrement)="decrementCounter()" (increment)="incrementCounter()"></app-counter>
+<app-counter [valeurCompteurFils]="valeurCompteurPere" (decrement)="decrementCounter()"
+             (increment)="incrementCounter()"></app-counter>
 
 <app-reset-counter (reset)="resetCounter($event)"></app-reset-counter>
-<app-random-counter [(valeurCounter)]="valeurCompteurPere" ></app-random-counter>
+<app-random-counter [(valeurCounter)]="valeurCompteurPere"></app-random-counter>
+<p *ngFor="let i of compteurArray" appDirectiveCounter="{{i}}">
+  Voici l'élément {{i}}
+</p>
+
+<h1>La liste des livres</h1>
+<app-livre-table></app-livre-table>
